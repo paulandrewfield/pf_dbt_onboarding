@@ -1,0 +1,13 @@
+    select
+O_ORDERKEY, 
+O_ORDERDATE, 
+O_ORDERTIME, 
+O_CUSTKEY, 
+O_ORDERSTATUS, 
+O_TOTALPRICE, 
+O_ORDERPRIORITY, 
+O_CLERK, 
+O_SHIPPRIORITY, 
+O_COMMENT
+
+    from {{ source('tpch_now', 'orders') }}

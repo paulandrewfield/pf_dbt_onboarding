@@ -39,4 +39,3 @@ models:
   pf_onboarding:
     # Applies to all files under models
       +materialized: table
-#test

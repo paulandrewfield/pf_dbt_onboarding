@@ -1,12 +1,16 @@
 sources: 
-  - name: tpch
-    database: ANALYTICS
-    schema: DBT_PFIELD
+  - name: tpch_now
+    database: RAW
+    schema: TPCH_NOW
     tables: 
-      - name: tpch_now.lineitem
-      - name: tpch_now.orders
-      - name: tpch_sf001.partsupp
-      - name: tpch_sf001.part
-      - name: tpch_sf001.supplier
+      - name: lineitem
+      - name: orders
+  - name: tpch
+    database: RAW
+    schema: TPCH_SF001
+    tables:
+      - name: partsupp
+      - name: part
+      - name: supplier
       
         

@@ -1,0 +1,12 @@
+sources: 
+  - name: tpch
+    database: ANALYTICS
+    schema: DBT_PFIELD
+    tables: 
+      - name: tpch_now.lineitem
+      - name: tpch_now.orders
+      - name: tpch_sf001.partsupp
+      - name: tpch_sf001.part
+      - name: tpch_sf001.supplier
+      
+        

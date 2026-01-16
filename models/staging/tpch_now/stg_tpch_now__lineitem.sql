@@ -14,6 +14,6 @@ L_RETURNFLAG as line_return_flag,
 L_LINESTATUS as line_status, 
 L_SHIPINSTRUCT as line_ship_instruct, 
 L_SHIPMODE as line_ship_mode, 
-L_COMMENT as line comment
+L_COMMENT as line_comment
 
     from {{ source('tpch_now', 'lineitem') }}

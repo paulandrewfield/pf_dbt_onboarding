@@ -2,13 +2,13 @@ with orders as (
     select * from {{ ref('stg_tpch_now__orders') }}
 ), 
 
-with lineitems as (
+lineitems as (
     select * from {{ ref('stg_tpch_now__lineitem') }}
 ), 
 
 final as (
     select * from orders 
-left join linteitems using (order_key)
+left join lineitems using (order_key)
 )
 
 select * from final

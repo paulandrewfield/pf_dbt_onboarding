@@ -7,6 +7,10 @@ models:
         data_tests:
           - unique
           - not_null
+      - name: order_status
+        description: "{{ doc('order_status')}}"
+        data_tests: 
+          - not_null
   - name: stg_tpch_now__lineitem
     description: The grain of this table is linenumber and orderkey
     columns: 

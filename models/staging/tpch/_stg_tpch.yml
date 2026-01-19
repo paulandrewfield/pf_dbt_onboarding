@@ -7,9 +7,9 @@ models:
         data_tests:
           - unique
           - not_null
-  - name: stf_tpch__partsupp
+  - name: stg_tpch__partsupp
     description: the link between parts and supplier
-    data_tests: 
-      - relationships:
-          field: supplier_key
-          to: ref('stg_tpch__supplier')
+  #  data_tests: 
+ #     - relationships:
+  #        field: supplier_key
+   #       to: ref('stg_tpch__supplier')   

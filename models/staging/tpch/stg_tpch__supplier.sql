@@ -9,13 +9,13 @@ source as (
 renamed as (
 
     select
-        s_suppkey,
-        s_name,
-        s_address,
-        s_nationkey,
-        s_phone,
-        s_acctbal,
-        s_comment
+        s_suppkey as supplier_key,
+        s_name as supplier_name,
+        s_address as supplier_address,
+        s_nationkey as supplier_nationkey,
+        s_phone as supplier_phone,
+        s_acctbal as supplier_acct_balance,
+        s_comment as supplier_comment
 
     from source
 

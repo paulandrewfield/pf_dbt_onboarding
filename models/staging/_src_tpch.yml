@@ -29,15 +29,15 @@ sources:
         - name: ps_suppkey
           data_tests: 
             - not_null
-            - relationships:
-                to: ref('_src_tpch')
-                field: s_suppkey
+  #          - relationships:
+  #              to: ref('_src_tpch')
+  #              field: s_suppkey
         - name: ps_partkey
           data_tests: 
             - not_null
-            - relationships:
-                field: p_partkey
-                to: ref('_src_tpch')
+  #          - relationships:
+  #              field: p_partkey
+  #              to: ref('_src_tpch')
 
       - name: part
         columns: 

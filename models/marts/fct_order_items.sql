@@ -11,8 +11,7 @@ final as (
      select
      {{ dbt_utils.generate_surrogate_key(['o.order_key', 'o.supplier_key', 'o.part_key']) }} as fct_order_item_key,
     o.ORDER_DATE, o.ORDER_TIME, o.TOTAL_PRICE, o.LINE_NUMBER, o.LINE_QUANTITY_ORDERED, o.LINE_EXTENDED_PRICE, o.LINE_DISCOUNT, o.LINE_TAX,
-    p.PART_RETAIL_PRICE,  p.PART_AVAILABLE_QUANTITY as num_parts_available
-
+    p.PART_RETAIL_PRICE,  p.PART_AVAILABLE_QUANTITY*1
      from order_items o
      left join part_suppliers p using (part_key, supplier_key)
 

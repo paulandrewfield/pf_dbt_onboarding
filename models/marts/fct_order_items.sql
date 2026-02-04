@@ -1,3 +1,4 @@
+-- just a test
 with order_items as (
     select * from {{ ref('order_items') }}
 ), 

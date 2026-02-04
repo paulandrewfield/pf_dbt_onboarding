@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+-- just a test
+=======
 -- a merge conflict test
+>>>>>>> 04b3d7b993e60e20f1354935fd385cf5fff647e1
 with order_items as (
     select * from {{ ref('order_items') }}
 ), 

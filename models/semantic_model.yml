@@ -1,0 +1,136 @@
+semantic_models:
+  - name: fct_order_items
+    description: >
+      Semantic model for order line items. Grain is one order item per row,
+      identified by `FCT_ORDER_ITEM_KEY`.
+    model: ref('fct_order_items')
+
+    defaults:
+      agg_time_dimension: order_date
+
+    entities:
+      - name: order_item
+        type: primary
+        expr: FCT_ORDER_ITEM_KEY
+
+    dimensions:
+      - name: order_date
+        type: time
+        expr: ORDER_DATE
+        type_params:
+          time_granularity: day
+
+      - name: order_time
+        type: time
+        expr: ORDER_TIME
+        type_params:
+          time_granularity: second
+
+      - name: order_year
+        type: categorical
+        expr: ORDER_YEAR
+
+      - name: line_number
+        type: categorical
+        expr: LINE_NUMBER
+
+    measures:
+      - name: order_item_count
+        description: Total number of order line items.
+        agg: count_distinct
+        expr: FCT_ORDER_ITEM_KEY
+
+      - name: total_quantity_ordered
+        description: Total quantity ordered across all line items.
+        agg: sum
+        expr: LINE_QUANTITY_ORDERED
+
+      - name: total_extended_price
+        description: Sum of extended price across all order line items.
+        agg: sum
+        expr: LINE_EXTENDED_PRICE
+
+      - name: total_discount
+        description: Sum of discounts applied across all order line items.
+        agg: sum
+        expr: LINE_DISCOUNT
+
+      - name: total_tax
+        description: Sum of tax applied across all order line items.
+        agg: sum
+        expr: LINE_TAX
+
+      - name: total_price
+        description: Sum of total price across all order line items.
+        agg: sum
+        expr: TOTAL_PRICE
+
+      - name: average_extended_price
+        description: Average extended price per line item.
+        agg: average
+        expr: LINE_EXTENDED_PRICE
+
+      - name: average_discount
+        description: Average discount per line item.
+        agg: average
+        expr: LINE_DISCOUNT
+
+      - name: total_retail_price
+        description: Sum of part retail prices across all order line items.
+        agg: sum
+        expr: PART_RETAIL_PRICE
+
+      - name: total_available_quantity
+        description: Sum of available part quantities across all order line items.
+        agg: sum
+        expr: PART_AVAILABLE_QUANTITY
+
+metrics:
+  - name: total_order_items
+    description: Count of all order line items.
+    type: simple
+    label: Total Order Items
+    type_params:
+      measure: order_item_count
+
+  - name: total_quantity_ordered
+    description: Total quantity ordered across all order line items.
+    type: simple
+    label: Total Quantity Ordered
+    type_params:
+      measure: total_quantity_ordered
+
+  - name: total_revenue
+    description: Sum of extended price across all order line items.
+    type: simple
+    label: Total Revenue
+    type_params:
+      measure: total_extended_price
+
+  - name: total_discount
+    description: Sum of discounts applied across all order line items.
+    type: simple
+    label: Total Discount
+    type_params:
+      measure: total_discount
+
+  - name: total_tax
+    description: Sum of tax applied across all order line items.
+    type: simple
+    label: Total Tax
+    type_params:
+      measure: total_tax
+
+  - name: average_order_item_value
+    description: Average extended price per order line item.
+    type: simple
+    label: Average Order Item Value
+    type_params:
+      measure: average_extended_price
+
+  - name: average_discount
+    description: Average discount per order line item.
+    type: simple
+    label: Average Discount
+    type_params:
+      measure: average_discount

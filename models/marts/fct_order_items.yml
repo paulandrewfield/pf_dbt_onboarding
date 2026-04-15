@@ -1,3 +1,5 @@
+version: 2
+
 models:
   - name: fct_order_items
     columns:
@@ -7,6 +9,7 @@ models:
           - amount_less_than_zero:
               arguments:
                 group_by_column: fct_order_item_key
+                col_id: order_year
           - dbt_expectations.expect_column_values_to_be_between:
               min_value: 0  # (Optional)
               max_value: 1000 # (Optional)
@@ -24,5 +27,8 @@ models:
         data_tests:
           - not_null
       - name: part_available_quantity
-        data_tests:
+        tests:
           - not_null
+         # - dbt_expectations.expect_column_values_to_be_of_type:
+         #     column_type: integer
+

@@ -11,7 +11,13 @@ packages:
   - name: dbt_expectations
     package: metaplane/dbt_expectations
     version: 0.10.10
+  - name: audit_helper
+    package: dbt-labs/audit_helper
+    version: 0.12.2
+  - name: elementary
+    package: elementary-data/elementary
+    version: 0.23.1
   - name: dbt_date
     package: godatadriven/dbt_date
-    version: 0.17.1
-sha1_hash: 72792be5271d64ce31b8062194881fd1e4b28a45
+    version: 0.17.2
+sha1_hash: faa12b7d5a5c4a8afd0abac0b741b13ab74394aa

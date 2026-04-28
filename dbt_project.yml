@@ -39,3 +39,8 @@ models:
   pf_onboarding:
     # Applies to all files under models
       +materialized: table
+
+  ## elementary models will be created in the schema '<your_schema>_elementary'
+  ## for details, see docs: <https://docs.elementary-data.com/>
+  elementary:
+    +schema: "elementary"

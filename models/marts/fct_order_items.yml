@@ -1,10 +1,10 @@
 models:
-  - name: fct_order_item_key
-    tests: 
-      - not_null
-      - unique    
   - name: fct_order_items
     columns:
+      - name: fct_order_item_key
+        tests: 
+          - not_null
+          - unique    
       - name: line_quantity_ordered
         tests:
           - not_null

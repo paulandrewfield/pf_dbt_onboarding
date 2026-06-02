@@ -1,6 +1,6 @@
 models:
   - name: fct_order_item_key
-    data_tests: 
+    tests: 
       - not_null
       - unique    
   - name: fct_order_items
@@ -17,16 +17,16 @@ models:
                 max_value: 1000
                 strictly: false
       - name: line_extended_price
-        data_tests:
+        tests:
           - not_null
       - name: line_discount
-        data_tests:
+        tests:
           - not_null
       - name: line_tax
-        data_tests:
+        tests:
           - not_null
       - name: part_retail_price
-        data_tests:
+        tests:
           - not_null
       - name: part_available_quantity
         data_tests:

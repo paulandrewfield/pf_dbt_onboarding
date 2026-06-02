@@ -1,4 +1,8 @@
 models:
+  - name: fct_order_item_key
+    data_tests: 
+      - not_null
+      - unique    
   - name: fct_order_items
     columns:
       - name: line_quantity_ordered

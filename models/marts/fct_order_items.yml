@@ -45,6 +45,14 @@ models:
           type: time
           name: order_date
         granularity: day
+<<<<<<< HEAD
+=======
+      - name: ORDER_TIME
+        dimension:
+          type: time
+          name: order_time
+        granularity: second
+>>>>>>> 6e0c2b0c815bd698b0d4e6bfa27b369164d556bf
       - name: ORDER_YEAR
         dimension:
           type: categorical
@@ -53,6 +61,15 @@ models:
         dimension:
           type: categorical
           name: line_number
+<<<<<<< HEAD
+=======
+    semantic_model:
+      enabled: true
+    description: >
+      Semantic model for order line items. Grain is one order item per row,
+      identified by `FCT_ORDER_ITEM_KEY`.
+    agg_time_dimension: order_date
+>>>>>>> 6e0c2b0c815bd698b0d4e6bfa27b369164d556bf
     metrics:
       - name: total_order_items
         description: Count of all order line items.
@@ -98,6 +115,7 @@ models:
         expr: LINE_DISCOUNT
       - name: total_price
         description: Sum of total price across all order line items.
+<<<<<<< HEAD
         type: simple
         agg: sum
         expr: TOTAL_PRICE
@@ -114,3 +132,24 @@ models:
         agg: sum
         expr: PART_AVAILABLE_QUANTITY
         hidden: true
+=======
+        agg: sum
+        expr: TOTAL_PRICE
+
+        type: simple
+        hidden: true
+      - name: total_retail_price
+        description: Sum of part retail prices across all order line items.
+        agg: sum
+        expr: PART_RETAIL_PRICE
+
+        type: simple
+        hidden: true
+      - name: total_available_quantity
+        description: Sum of available part quantities across all order line items.
+        agg: sum
+        expr: PART_AVAILABLE_QUANTITY
+
+        type: simple
+        hidden: true
+>>>>>>> 6e0c2b0c815bd698b0d4e6bfa27b369164d556bf

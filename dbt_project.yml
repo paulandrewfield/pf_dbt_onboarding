@@ -36,6 +36,7 @@ models:
   pf_onboarding:
     # Applies to all files under models
     +materialized: table
+<<<<<<< HEAD
 
   ## elementary models will be created in the schema '<your_schema>_elementary'
   ## for details, see docs: <https://docs.elementary-data.com/>
@@ -48,3 +49,7 @@ flags:
 vars:
   disable_dbt_artifacts_autoupload: true
   disable_dbt_invocation_autoupload: true
+=======
+flags:
+  require_generic_test_arguments_property: true
+>>>>>>> 6e0c2b0c815bd698b0d4e6bfa27b369164d556bf

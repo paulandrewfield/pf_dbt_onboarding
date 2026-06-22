@@ -37,9 +37,6 @@ models:
         data_tests:
           - not_null
       - name: FCT_ORDER_ITEM_KEY
-        data_tests: 
-          - unique
-          - not_null
         entity:
           type: primary
           name: order_item

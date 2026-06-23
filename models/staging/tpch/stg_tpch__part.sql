@@ -19,7 +19,7 @@ renamed as (
         p_type as part_type,
         p_size as part_size,
         p_container as part_container,
-        p_retailprice as part_retail_price,
+        p_retailprice as part_retail_price*10,
         p_comment as part_comment
 
     from source

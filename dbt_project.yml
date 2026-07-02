@@ -36,6 +36,13 @@ models:
   pf_onboarding:
     # Applies to all files under models
     +materialized: table
+    Intermediate: 
+      +schema: INT
+    staging: 
+      +schema: STG
+    marts: 
+      +schema: MRT
+
 
   ## elementary models will be created in the schema '<your_schema>_elementary'
   ## for details, see docs: <https://docs.elementary-data.com/>

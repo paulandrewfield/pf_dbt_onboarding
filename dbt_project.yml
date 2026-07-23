@@ -33,7 +33,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   +static_analysis: strict
-  pf_onboarding:
+  pf_dbt_onboarding:
     # Applies to all files under models
     +materialized: table
 

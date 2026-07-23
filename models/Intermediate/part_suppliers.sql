@@ -14,7 +14,7 @@ final as (
     select * from parts 
     left join partsupp using (part_key)
     left join supplier using (supplier_key)
-    where 1 = 1
+    where supplier_key is not null
 )
 
 select * from final

@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: fct_order_items
+  - name: fct_order_items_local
     description: >
       Semantic model for order line items. Grain is one order item per row,
       identified by `FCT_ORDER_ITEM_KEY`.

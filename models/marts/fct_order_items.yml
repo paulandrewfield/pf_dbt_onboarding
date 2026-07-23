@@ -2,7 +2,8 @@ version: 2
 
 models:
   - name: fct_order_items
-    group: test_group
+    groups: 
+      - name: test_group
     access: public
     description: >
       Semantic model for order line items. Grain is one order item per row,
